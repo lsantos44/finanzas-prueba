@@ -1,0 +1,23 @@
+name = "finanzas-prueba"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+# Declarar aquí la base de datos es lo que permite que el botón de despliegue la cree y la
+# vincule solo. Quien instale esto no tiene que entrar al panel a añadir el binding a mano,
+# que es justo el paso donde se atasca todo el mundo.
+[[d1_databases]]
+binding = "DB"
+database_name = "finanzas"
+database_id = "2f29bb34-ac0e-43ee-96d0-dbb29fcc5ead"
+
+[vars]
+# La URL de la app. Admite varias separadas por comas.
+ALLOW_ORIGIN = "https://finanzaspersonaleslsg.netlify.app"
+# Proveedor de IA por defecto (solo si usas el proxy; cada usuario puede poner su clave en la app).
+UPSTREAM_BASE = "https://openrouter.ai/api/v1"
+
+# Los secretos NO van aquí: se ponen con `wrangler secret put` o en el panel.
+#   PROXY_TOKEN     tu contraseña para que solo tú uses este Worker
+#   EB_APP_ID       Application ID de Enable Banking
+#   EB_PRIVATE_KEY  contenido del .pem, con las líneas BEGIN/END
+#   UPSTREAM_KEY    clave del proveedor de IA (opcional)
